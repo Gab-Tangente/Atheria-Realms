@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Reveals - Atheria Realms</title>
+    <link rel="icon" href="coloredball.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="book.png" alt="Atheria Realms Logo" class="logo-icon">
+            <h1>Atheria Realms</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#" onclick="return false;" style="opacity: 0.5; cursor: not-allowed;">Sign Up</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="reveals-hero">
+            <img src="Runes.png" alt="Game Reveals Hero Image">
+            <div class="reveals-content">
+                <h1>Game Reveals</h1>
+                <p>Discover the latest reveals and updates from the Atheria Realms universe.</p>
+            </div>
+        </section>
+
+        <section class="reveals-grid">
+            <div class="reveal-item" data-modal="reveal1">
+                <img src="Golden-gate.png" alt="Game Reveal 1">
+                <h2>Golden Gate</h2>
+                <p>Where new adventures awaits for players to explore.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal2">
+                <img src="nexuspoint.png" alt="Game Reveal 2">
+                <h2>Nexus Point</h2>
+                <p>Uncover the secrets of the Nexus and its powerful artifacts.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal3">
+                <img src="Luminafield.png" alt="Game Reveal 3">
+                <h2>Lumina Field</h2>
+                <p>Feel the Energy Surge! Collect power, unleash devastating abilities, and become the ultimate
+                    champion. The arena awaits but are you ready to dominate?</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal4">
+                <img src="Emeraldrite.png" alt="Game Reveal 4">
+                <h2>Emerald Rite</h2>
+                <p>Unleash the power of the Emerald Rite, a sacred ritual that grants unimaginable strength to its
+                    wielder.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal5">
+                <img src="aethel.png" alt="Game Reveal 5">
+                <h2>Aethel</h2>
+                <p>Begin your journey in Aethel, a land of soaring peaks and vibrant cities. Explore breathtaking
+                    landscapes, battle fearsome monsters, and forge your own legend in a world brimming with adventure.
+                </p>
+            </div>
+            <div class="reveal-item" data-modal="reveal6">
+                <img src="mire.png" alt="Game Reveal 6">
+                <h2>The Mire of the Damned</h2>
+                <p>a survival challenge unlike any other. Face hordes of tormented spirits, solve ancient riddles, and
+                    fight to escape a realm where hope has withered. Only the most resilient can survive the Mire's
+                    trials and silence the lost cries.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal7">
+                <img src="lostcity.png" alt="Game Reveal 7">
+                <h2>The Lost City</h2>
+                <p>Uncover the mysteries of the Lost City, a forgotten realm filled with ancient technology and powerful
+                    foes.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal8">
+                <img src="windascent.png" alt="Game Reveal 8">
+                <h2>Windcaller Ascent</h2>
+                <p>Harness the power of the winds! Become a Windcaller and master devastating aerial abilities</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal9">
+                <img src="portalcreate.png" alt="Game Reveal 9">
+                <h2>Portal Creation</h2>
+                <p>Master the art of portal creation and traverse dimensions like never before.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal10">
+                <img src="basic-shield.png" alt="Game Reveal 10">
+                <h2>Basic Shield</h2>
+                <p>Equip a basic shield to enhance your defense and withstand enemy attacks.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal11">
+                <img src="absorption.png" alt="Game Reveal 11">
+                <h2>Absorption</h2>
+                <p>Absorb enemy attacks and convert them into powerful energy for your skills.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal12">
+                <img src="teleportspell.png" alt="Game Reveal 12">
+                <h2>Teleport Spell</h2>
+                <p>Instantly transport yourself to a nearby location, evading danger and outmaneuvering foes.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal13">
+                <img src="waypoints.png" alt="Game Reveal 13">
+                <h2>Waypoints</h2>
+                <p>Discover ancient waypoints that allow for instant travel between locations.</p>
+            </div>
+            <div class="reveal-item" data-modal="reveal14">
+                <img src="Staff-power.png" alt="Game Reveal 14">
+                <h2>Staff Power</h2>
+                <p>Unleash the true potential of your staff, enhancing your magical abilities and spellcasting prowess.
+                </p>
+            </div>
+            <div class="reveal-item" data-modal="reveal15">
+                <img src="Pilgrimpath.png" alt="Game Reveal 15">
+                <h2>Pilgrim's Path</h2>
+                <p>Embark on a journey through the Pilgrim's Path, a sacred route filled with trials and ancient wisdom.
+                </p>
+            </div>
+        </section>
+
+        <!-- Modal Structure -->
+        <div id="revealModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalMedia"></div>
+            <div class="modal-details">
+                <h2 id="modalTitle">Reveal Title</h2>
+                <p id="modalDescription">Reveal description will appear here.</p>
+                <p id="modalDate">Date will appear here.</p>
+            </div>
+        </div>
+    </div>
+    </main>
+
+    <script>
+        // Modal functionality
+        const modal = document.getElementById('revealModal');
+        const modalMedia = document.getElementById('modalMedia');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalDate = document.getElementById('modalDate');
+        const closeBtn = document.querySelector('.close');
+
+        // Reveal data
+        const reveals = {
+            reveal1: {
+                media: '<img src="Golden-gate.png" alt="Full Reveal 1">',
+                title: 'Golden Gate',
+                description: 'Where new adventures awaits for players to explore. Discover hidden treasures, face formidable foes, and unlock the secrets of this majestic gateway.',
+                date: 'Revealed: January 15, 2025'
+            },
+            reveal2: {
+                media: '<img src="nexuspoint.png" alt="Full Reveal 2">',
+                title: 'Nexus Point',
+                description: 'Uncover the secrets of the Nexus and its powerful artifacts. Journey through interconnected realms and harness the energy that binds them together.',
+                date: 'Revealed: January 20, 2025'
+            },
+            reveal3: {
+                media: '<img src="Luminafield.png" alt="Full Reveal 3">',
+                title: 'Lumina Field',
+                description: 'Feel the Energy Surge! Collect power, unleash devastating abilities, and become the ultimate champion. The arena awaits but are you ready to dominate?',
+                date: 'Revealed: February 5, 2025'
+            },
+            reveal4: {
+                media: '<img src="Emeraldrite.png" alt="Full Reveal 4">',
+                title: 'Emerald Rite',
+                description: 'Unleash the power of the Emerald Rite, a sacred ritual that grants unimaginable strength to its wielder.',
+                date: 'Revealed: February 12, 2025'
+            },
+            reveal5: {
+                media: '<img src="aethel.png" alt="Full Reveal 5">',
+                title: 'Aethel',
+                description: 'Begin your journey in Aethel, a land of soaring peaks and vibrant cities. Explore breathtaking landscapes, battle fearsome monsters, and forge your own legend in a world brimming with adventure.',
+                date: 'Revealed: February 18, 2025'
+            },
+            reveal6: {
+                media: '<img src="mire.png" alt="Full Reveal 6">',
+                title: 'The Mire of the Damned',
+                description: 'A survival challenge unlike any other. Face hordes of tormented spirits, solve ancient riddles, and fight to escape a realm where hope has withered. Only the most resilient can survive the Mire\'s trials and silence the lost cries.',
+                date: 'Revealed: March 1, 2025'
+            },
+            reveal7: {
+                media: '<img src="lostcity.png" alt="Full Reveal 7">',
+                title: 'The Lost City',
+                description: 'Uncover the mysteries of the Lost City, a forgotten realm filled with ancient technology and powerful foes.',
+                date: 'Revealed: March 10, 2025'
+            },
+            reveal8: {
+                media: '<video controls><source src="Windcallerascent.mp4" type="video/mp4"></video>',
+                title: 'Windcaller Ascent',
+                description: 'Harness the power of the winds! Become a Windcaller and master devastating aerial abilities.',
+                date: 'Revealed: March 20, 2025'
+            },
+            reveal9: {
+                media: '<video controls><source src="portalcreationvid.mp4" type="video/mp4"></video>',
+                title: 'Portal Creation',
+                description: 'Master the art of portal creation and traverse dimensions like never before.',
+                date: 'Revealed: April 5, 2025'
+            },
+            reveal10: {
+                media: '<img src="basic-shield.png" alt="Full Reveal 10">',
+                title: 'Basic Shield',
+                description: 'Equip a basic shield to enhance your defense and withstand enemy attacks.',
+                date: 'Revealed: April 15, 2025'
+            },
+            reveal11: {
+                media: '<video controls><source src="Absorbingreveal.mp4" type="video/mp4"></video>',
+                title: 'Absorption',
+                description: 'Absorb enemy attacks and convert them into powerful energy for your skills.',
+                date: 'Revealed: April 25, 2025'
+            },
+            reveal12: {
+                media: '<video controls><source src="transvectio.mp4" type="video/mp4"></video>',
+                title: 'Teleport Spell',
+                description: 'Instantly transport yourself to a nearby location, evading danger and outmaneuvering foes.',
+                date: 'Revealed: May 5, 2025'
+            },
+            reveal13: {
+                media: '<video controls><source src="Waypoints.mp4" type="video/mp4"></video>',
+                title: 'Waypoints',
+                description: 'Discover ancient waypoints that allow for instant travel between locations.',
+                date: 'Revealed: May 15, 2025'
+            },
+            reveal14: {
+                media: '<video controls><source src="staffpowah.mp4" type="video/mp4"></video>',
+                title: 'Staff Power',
+                description: 'Unleash the true potential of your staff, enhancing your magical abilities and spellcasting prowess.',
+                date: 'Revealed: May 25, 2025'
+            },
+            reveal15: {
+                media: '<img src="Pilgrimpath.png" alt="Full Reveal 15">',
+                title: 'Pilgrim\'s Path',
+                description: 'Embark on a journey through the Pilgrim\'s Path, a sacred route filled with trials and ancient wisdom.',
+                date: 'Revealed: June 5, 2025'
+            }
+        };
+
+        // Open modal
+        document.querySelectorAll('.reveal-item').forEach(item => {
+            item.addEventListener('click', () => {
+                const modalId = item.getAttribute('data-modal');
+                const reveal = reveals[modalId];
+                if (reveal) {
+                    modalMedia.innerHTML = reveal.media;
+                    modalTitle.textContent = reveal.title;
+                    modalDescription.textContent = reveal.description;
+                    modalDate.textContent = reveal.date;
+                    modal.style.display = 'block';
+                }
+            });
+        });
+
+        // Close modal
+        closeBtn.addEventListener('click', () => {
+            modal.style.display = 'none';
+        });
+
+        window.addEventListener('click', (e) => {
+            if (e.target === modal) {
+                modal.style.display = 'none';
+            }
+        });
+    </script>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Atheria Realms</h3>
+                <p>Embark on an epic journey through mystical lands. Your adventure awaits in the world of Atheria.</p>
+                <div class="social-links">
+                    <a href="https://discord.com" target="_blank" title="Discord">💬</a>
+                    <a href="https://twitter.com" target="_blank" title="Twitter">🐦</a>
+                    <a href="https://youtube.com" target="_blank" title="YouTube">📺</a>
+                </div>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" onclick="return false;" style="opacity: 0.5; cursor: not-allowed;">Game Reveals</a>
+                    </li>
+                    <li><a href="#" onclick="return false;" style="opacity: 0.5; cursor: not-allowed;">Sign Up</a></li>
+                    <li><a href="https://www.roblox.com/games/70490669692513/Atheria-Realms" target="_blank">Play Now</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Community</h3>
+                <ul>
+                    <li><a href="https://www.roblox.com/games/112106817363366/test-for-yes" target="_blank">Game Testing
+                            Site</a></li>
+                    <li><a href="https://discord.gg/SrqBXrXrPv" target="_blank">Discord Server</a></li>
+                    <li><a href="https://www.roblox.com/communities/621827002/Flutterby-Fields-Community#!/about"
+                            target="_blank">Roblox Group</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Support</h3>
+                <ul>
+                    <li><a href="#">FAQ</a></li>
+                    <li><a href="#">Game Guide</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Report Bug</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Atheria Realms. All rights reserved. Crafted with magic and passion.</p>
+        </div>
+    </footer>
+</body>
+
+</html>
