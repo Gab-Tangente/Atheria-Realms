@@ -18,7 +18,6 @@
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="game-reveals.html">Game Reveals</a></li>
-                <li><a href="sign-up.html">Sign Up</a></li>
             </ul>
         </nav>
     </header>
@@ -37,21 +36,21 @@
                 <h2>Create Your Account</h2>
                 <div class="form-group">
                     <label for="username">Username:</label>
-                    <input type="text" id="username" name="username" required>
+                    <input type="text" id="username" name="username">
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
+                    <input type="email" id="email" name="email">
                 </div>
                 <div class="form-group">
                     <label for="password">Password:</label>
-                    <input type="password" id="password" name="password" required>
+                    <input type="password" id="password" name="password">
                 </div>
                 <div class="form-group">
                     <label for="confirm-password">Confirm Password:</label>
-                    <input type="password" id="confirm-password" name="confirm-password" required>
+                    <input type="password" id="confirm-password" name="confirm-password">
                 </div>
-                <button type="submit">Sign Up</button>
+                <button type="button" onclick="validateSignUp()">Sign Up</button>
             </form>
         </section>
 
@@ -61,9 +60,9 @@
             <form class="suggestions-form" action="#" method="post">
                 <div class="form-group">
                     <label for="suggestion">Your Suggestion:</label>
-                    <textarea id="suggestion" name="suggestion" rows="5" required placeholder="Tell us your ideas for new features, realms, or improvements..."></textarea>
+                    <textarea id="suggestion" name="suggestion" rows="5" placeholder="Tell us your ideas for new features, realms, or improvements..."></textarea>
                 </div>
-                <button type="submit">Submit Suggestion</button>
+                <button type="button" onclick="validateSuggestion()">Submit Suggestion</button>
             </form>
         </section>
 
@@ -125,3 +124,52 @@
             <p>&copy; 2024 Atheria Realms. All rights reserved. Crafted with magic and passion.</p>
         </div>
     </footer>
+
+    <script>
+        function validateSignUp() {
+            var username = document.getElementById("username").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("password").value;
+            var confirmPassword = document.getElementById("confirm-password").value;
+
+            var isValid = true;
+
+            if (username === "") {
+                alert("Please enter a username.");
+                isValid = false;
+            } else if (email === "") {
+                alert("Please enter your email.");
+                isValid = false;
+            } else if (password === "") {
+                alert("Please enter a password.");
+                isValid = false;
+            } else if (confirmPassword === "") {
+                alert("Please confirm your password.");
+                isValid = false;
+            } else if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                isValid = false;
+            }
+
+            if (isValid === true) {
+                alert("Welcome to Atheria Realms, " + username + "! Your adventure begins now.");
+            }
+        }
+
+        function validateSuggestion() {
+            var suggestion = document.getElementById("suggestion").value;
+            var isValid = true;
+
+            if (suggestion === "") {
+                alert("Please enter your suggestion before submitting.");
+                isValid = false;
+            }
+
+            if (isValid === true) {
+                alert("Thank you for your suggestion! The Atheria Realms team will review it.");
+            }
+        }
+    </script>
+
+</body>
+</html>
